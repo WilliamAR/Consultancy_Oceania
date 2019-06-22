@@ -17,9 +17,6 @@ datos$YYYYMM <- ymd(datos$YYYYMM,truncated = 2)
 datos$Month <- month(datos$YYYYMM)
 datos$Year <- year(datos$YYYYMM)
 datos <- datos[,c("Year","Month","SSH")]
-datos$Month <- factor(datos$Month,
-                      labels = c("Ene","Feb","Mar","Abr","May", "Jun", 
-                                 "Jul", "Aug", "Sep", "Oct","Nov", "Dic"))
 #Means Year and Month####
 MY <- datos %>% group_by(Year) %>% summarise(medias = mean(SSH))
 MM <- datos %>% group_by(Month) %>% summarise(medias = mean(SSH))

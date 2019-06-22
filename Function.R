@@ -24,7 +24,8 @@ MM <- datos %>% group_by(Month) %>% summarise(medias = mean(SSH))
 ggplot(data = MY, aes(x=Year, y=medias)) + 
   geom_boxplot(data = datos,aes(x=Year,y=SSH,group=Year), 
                fill = "#aee7e8", outlier.color = "#24009c") +
-  scale_y_continuous(name = "Height") + xlab("Year") + 
+  scale_y_continuous(name = "Height") + 
+  scale_x_continuous(name = "Year", breaks = seq(min(MY$Year),max(MY$Year),1)) + 
   labs(tag = "Sea surface height") + 
   theme(plot.tag = element_text(lineheight = 2,face = "bold",size = 20),
         plot.tag.position = "top")  +

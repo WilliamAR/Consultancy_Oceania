@@ -43,5 +43,3 @@ ggplot(data = MM, aes(x=Month, y=medias)) +
   theme(plot.tag = element_text(lineheight = 2,face = "bold",size = 20),
         plot.tag.position = "top")  +
   geom_point(color = "#c72c41")  + geom_line(color = "#c72c41")
-
-

@@ -26,7 +26,7 @@ histDist(datos, family=as.name(Ajuste$family[1]), col.hist = "white",
 #eval = Evalua expresiones
 #parse = convierte textos en expresiones sin evaluar
 #paste0 = concatena textos sin espacios
-Quant$Cuantil_P <- eval(parse(text = paste0("q",Ajuste$family[1],
+Quant$Cuantil_T <- eval(parse(text = paste0("q",Ajuste$family[1],
                                             "(p=seq(0,1,0.0001),mu=",
                                             Ajuste$mu,
                                             ",sigma=",Ajuste$sigma,")")))
@@ -37,7 +37,7 @@ d_0.95 <- round(Quant$Cuantil_P[9501],2)
 d_0.99 <- round(Quant$Cuantil_P[9901],2)
 ggplot(data = Quant) + 
   geom_line(aes(x=Cuantil_P,y=Probs), color = "#FF9770", size=1) +
-  geom_line(aes(x=Cuantil_P,y=Probs), color = "#70D6FF", size=1) + 
+  geom_line(aes(x=Cuantil_T,y=Probs), color = "#70D6FF", size=1) + 
   scale_x_continuous(name = "X",breaks = seq(0,ceiling(max(datos)),5)) +
   scale_y_continuous(name = "Probability") +
   labs(tag = paste("Data VS",Ajuste$family[2])) +

@@ -28,7 +28,7 @@ ggplot(data = MY, aes(x=Year, y=medias)) +
   scale_x_continuous(name = "Year", breaks = seq(min(MY$Year),max(MY$Year),1)) + 
   labs(tag = "Sea surface height") + 
   theme(plot.tag = element_text(lineheight = 2,face = "bold",size = 20),
-        plot.tag.position = "top")  +
+        plot.tag.position = "top", axis.text.x = element_text(angle = 90))  +
   geom_point(color = "#c72c41") + geom_line(color = "#c72c41")
 
 
@@ -41,5 +41,5 @@ ggplot(data = MM, aes(x=Month, y=medias)) +
                          "Oct","Nov","Dic")) +
   labs(tag = "Sea surface height") + 
   theme(plot.tag = element_text(lineheight = 2,face = "bold",size = 20),
-        plot.tag.position = "top")  +
+        plot.tag.position = "top", axis.text.x = element_text(angle = 90))  +
   geom_point(color = "#c72c41")  + geom_line(color = "#c72c41")
